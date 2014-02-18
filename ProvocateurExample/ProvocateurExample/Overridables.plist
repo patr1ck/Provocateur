@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>boxMass</key>
+	<dict>
+		<key>default</key>
+		<real>1</real>
+		<key>min</key>
+		<string>0.0001</string>
+		<key>max</key>
+		<string>10</string>
+	</dict>
+	<key>restitution</key>
+	<dict>
+		<key>default</key>
+		<real>0.99</real>
+		<key>min</key>
+		<string>0.01</string>
+		<key>max</key>
+		<string>2</string>
+	</dict>
+	<key>friction</key>
+	<dict>
+		<key>default</key>
+		<real>0.98</real>
+		<key>min</key>
+		<string>0.001</string>
+		<key>max</key>
+		<string>5</string>
+	</dict>
+	<key>gravity</key>
+	<dict>
+		<key>default</key>
+		<real>-9.81</real>
+		<key>min</key>
+		<string>-100</string>
+		<key>max</key>
+		<string>0</string>
+	</dict>
+	<key>color</key>
+	<dict>
+		<key>default</key>
+		<string>#1b1b1b</string>
+	</dict>
+</dict>
+</plist>
