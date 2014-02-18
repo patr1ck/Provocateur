@@ -207,6 +207,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pacific Helm";
 				TargetAttributes = {
+					CD08FB5A18B3094800E96B6B = {
+						DevelopmentTeam = Y3KR2EGM3V;
+					};
 					CD08FB7B18B3094800E96B6B = {
 						TestTargetID = CD08FB5A18B3094800E96B6B;
 					};
@@ -387,11 +390,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProvocateurExample/ProvocateurExample-Prefix.pch";
 				INFOPLIST_FILE = "ProvocateurExample/ProvocateurExample-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Provocateur $(SRCROOT)/../Pods/Headers/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,11 +408,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProvocateurExample/ProvocateurExample-Prefix.pch";
 				INFOPLIST_FILE = "ProvocateurExample/ProvocateurExample-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Provocateur $(SRCROOT)/../Pods/Headers/**";
 				WRAPPER_EXTENSION = app;
 			};

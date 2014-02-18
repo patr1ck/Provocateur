@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Pacific Helm. All rights reserved.
 //
 
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
+
 #import "PAHHeadquatersViewController.h"
 
 @interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate>
@@ -40,7 +42,7 @@
     self.browser.minimumNumberOfPeers = 1;
     self.browser.maximumNumberOfPeers = 1;
     self.browser.delegate = self;
-        
+    
     self.overridablesDictionary = [NSDictionary dictionary];
 }
 
@@ -72,6 +74,30 @@
 
 #pragma mark - IBActions
 
+- (IBAction)colorDidUpdate:(id)sender
+{
+    // crappy validation for hex codes
+    if (!(self.textField.text.length == 3 || self.textField.text.length == 6)) {
+        return;
+    }
+    
+    
+    NSError *error = nil;
+    
+    NSDictionary *txDictionary = @{@"key": @"color", @"value": self.textField.text};
+    NSData *dataPackage = [NSKeyedArchiver archivedDataWithRootObject:txDictionary];
+    
+    BOOL success = [self.peeringSession sendData:dataPackage
+                                         toPeers:self.peeringSession.connectedPeers
+                                        withMode:MCSessionSendDataReliable
+                                           error:&error];
+    
+    if (!success && error) {
+        NSLog(@"ERROR SENDING: %@", [error localizedDescription]);
+    }
+}
+
+
 - (IBAction)showConnectModal:(id)sender;
 {
     [self presentViewController:self.browser animated:YES completion:^{}];
@@ -81,11 +107,12 @@
 
 - (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController;
 {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
     if (self.peeringSession.connectedPeers.count > 0) {
         [self.overlay removeFromSuperview];
+        self.overlay = nil;
     }
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController;
@@ -104,10 +131,6 @@
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID;
 {
     NSLog(@"Got data: %@", data);
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-    });
 }
 
 // Received a byte stream from remote peer
@@ -134,5 +157,5 @@
         self.overridablesDictionary = [NSDictionary dictionaryWithContentsOfURL:localURL];
         [self.overlay removeFromSuperview];
     }
-
+}
 @end

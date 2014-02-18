@@ -10,6 +10,9 @@
 
 @interface PAHHeadquatersViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UITextField *textField;
+
+- (IBAction)colorDidUpdate:(id)sender;
 - (IBAction)showConnectModal:(id)sender;
 
 @end

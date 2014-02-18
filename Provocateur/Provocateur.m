@@ -132,8 +132,13 @@
 {
     NSLog(@"Got data: %@", data);
     
+    NSDictionary *rxDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    NSString *key = rxDictionary[@"key"];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        
+        ProvocateurBlock block = [self.keyToBlockMap objectForKey:key];
+        block(rxDictionary[@"value"]);
     });
 }
 
