@@ -3,7 +3,7 @@
 //  Provocateur
 //
 //  Created by Patrick B. Gibson on 2/17/14.
-//  Copyright (c) 2014 Pacific Helm. All rights reserved.
+//  Copyright (c) 2014 Target. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

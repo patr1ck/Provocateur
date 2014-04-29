@@ -61,6 +61,11 @@
     }
 }
 
+- (void)generateTable
+{
+    
+}
+
 - (UIView *)overlay
 {
     if (!_overlay) {
@@ -156,6 +161,8 @@
     if ([resourceName isEqualToString:@"Overridables.plist"]) {
         self.overridablesDictionary = [NSDictionary dictionaryWithContentsOfURL:localURL];
         [self.overlay removeFromSuperview];
+        
+        [self generateTable];
     }
 }
 @end
