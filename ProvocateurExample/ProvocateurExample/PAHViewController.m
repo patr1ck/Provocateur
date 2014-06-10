@@ -88,6 +88,10 @@
         [self.view addSubview:ball];
     }
     
+    UICollisionBehavior* collisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.view.subviews];
+    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    [self.animator addBehavior:collisionBehavior];
+    
     UIDynamicItemBehavior *elasticityBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.view.subviews];
     elasticityBehavior.elasticity = 1.0f;
     elasticityBehavior.resistance = 0.001f;
@@ -96,15 +100,8 @@
     UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:self.view.subviews];
     [self.animator addBehavior:gravity];
     
-    UICollisionBehavior* collisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.view.subviews];
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    [self.animator addBehavior:collisionBehavior];
+
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

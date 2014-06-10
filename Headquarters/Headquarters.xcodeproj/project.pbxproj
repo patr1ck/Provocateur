@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CD39725518B32DDB00D4C1D0 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD39725418B32DDB00D4C1D0 /* MultipeerConnectivity.framework */; };
 		CD39725718B32E3300D4C1D0 /* ConnectOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD39725618B32E3300D4C1D0 /* ConnectOverlayView.xib */; };
+		CD96CE7E1947AC3A00CD2DAB /* PAHColorControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD96CE7D1947AC3A00CD2DAB /* PAHColorControlCell.m */; };
+		CD96CE811947AC4A00CD2DAB /* PAHNumberValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD96CE801947AC4A00CD2DAB /* PAHNumberValueCell.m */; };
 		CDB93C2718B3298500354CA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2618B3298500354CA9 /* Foundation.framework */; };
 		CDB93C2918B3298500354CA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2818B3298500354CA9 /* CoreGraphics.framework */; };
 		CDB93C2B18B3298500354CA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2A18B3298500354CA9 /* UIKit.framework */; };
@@ -39,6 +41,10 @@
 /* Begin PBXFileReference section */
 		CD39725418B32DDB00D4C1D0 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		CD39725618B32E3300D4C1D0 /* ConnectOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectOverlayView.xib; sourceTree = "<group>"; };
+		CD96CE7C1947AC3A00CD2DAB /* PAHColorControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAHColorControlCell.h; sourceTree = "<group>"; };
+		CD96CE7D1947AC3A00CD2DAB /* PAHColorControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAHColorControlCell.m; sourceTree = "<group>"; };
+		CD96CE7F1947AC4A00CD2DAB /* PAHNumberValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAHNumberValueCell.h; sourceTree = "<group>"; };
+		CD96CE801947AC4A00CD2DAB /* PAHNumberValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAHNumberValueCell.m; sourceTree = "<group>"; };
 		CDB93C2318B3298500354CA9 /* Headquarters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headquarters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB93C2618B3298500354CA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDB93C2818B3298500354CA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +133,10 @@
 				CDB93C3B18B3298500354CA9 /* Main_iPad.storyboard */,
 				CDB93C3E18B3298500354CA9 /* PAHHeadquatersViewController.h */,
 				CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */,
+				CD96CE7C1947AC3A00CD2DAB /* PAHColorControlCell.h */,
+				CD96CE7D1947AC3A00CD2DAB /* PAHColorControlCell.m */,
+				CD96CE7F1947AC4A00CD2DAB /* PAHNumberValueCell.h */,
+				CD96CE801947AC4A00CD2DAB /* PAHNumberValueCell.m */,
 				CDB93C4118B3298500354CA9 /* Images.xcassets */,
 				CDB93C2D18B3298500354CA9 /* Supporting Files */,
 			);
@@ -263,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB93C3718B3298500354CA9 /* PAHAppDelegate.m in Sources */,
+				CD96CE7E1947AC3A00CD2DAB /* PAHColorControlCell.m in Sources */,
 				CDB93C4018B3298500354CA9 /* PAHHeadquatersViewController.m in Sources */,
+				CD96CE811947AC4A00CD2DAB /* PAHNumberValueCell.m in Sources */,
 				CDB93C3318B3298500354CA9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

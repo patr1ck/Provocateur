@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PAHHeadquatersViewController : UIViewController
+@interface PAHHeadquatersViewController : UITableViewController
 
 @property (nonatomic, weak) IBOutlet UITextField *textField;
 

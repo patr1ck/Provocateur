@@ -9,6 +9,8 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 #import "PAHHeadquatersViewController.h"
+#import "PAHNumberValueCell.h"
+#import "PAHColorControlCell.h"
 
 @interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate>
 
@@ -108,6 +110,52 @@
     [self presentViewController:self.browser animated:YES completion:^{}];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.overridablesDictionary allKeys].count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return 170;
+    } else {
+        return 64;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"blah"];
+    
+    NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:indexPath.section];
+    id value = self.overridablesDictionary[key];
+    
+    // See what kind of cell we are;
+    if ([value[@"default"] isKindOfClass:[NSNumber class]]) {
+        PAHNumberValueCell *numberCell = [self.tableView dequeueReusableCellWithIdentifier:@"value" forIndexPath:indexPath];
+        
+        cell = numberCell;
+    } else if ([value[@"default"] isKindOfClass:[NSString class]]) {
+        PAHColorControlCell *colorCell = [self.tableView dequeueReusableCellWithIdentifier:@"color" forIndexPath:indexPath];
+        
+        cell = colorCell;
+    }
+    
+    
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.overridablesDictionary.allKeys objectAtIndex:section];
+}
+
 #pragma mark MCBrowserViewControllerDelegate
 
 - (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController;
@@ -160,6 +208,7 @@
     
     if ([resourceName isEqualToString:@"Overridables.plist"]) {
         self.overridablesDictionary = [NSDictionary dictionaryWithContentsOfURL:localURL];
+        [self.tableView reloadData];
         [self.overlay removeFromSuperview];
         
         [self generateTable];

@@ -61,7 +61,6 @@
     [self.keyToBlockMap setObject:block forKey:key];
     
     // Run with initial value from plist
-    
     if ([self.defaultValueDictionary objectForKey:key] && self.defaultValueDictionary[key][@"default"]) {
         block(self.defaultValueDictionary[key][@"default"]);
     } else {
