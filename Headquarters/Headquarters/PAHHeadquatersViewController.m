@@ -63,11 +63,6 @@
     }
 }
 
-- (void)generateTable
-{
-    
-}
-
 - (UIView *)overlay
 {
     if (!_overlay) {
@@ -210,8 +205,6 @@
         self.overridablesDictionary = [NSDictionary dictionaryWithContentsOfURL:localURL];
         [self.tableView reloadData];
         [self.overlay removeFromSuperview];
-        
-        [self generateTable];
     }
 }
 @end
