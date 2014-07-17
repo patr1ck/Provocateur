@@ -1,10 +1,10 @@
 PODS:
-  - HexColors (2.2.1)
+  - UIColor+Additions (1.0.1)
 
 DEPENDENCIES:
-  - HexColors (~> 2.2.1)
+  - UIColor+Additions (~> 1.0.1)
 
 SPEC CHECKSUMS:
-  HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
+  UIColor+Additions: 6c3ab749f2c0c55b3154c4fd0207de1d3505dda3
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1

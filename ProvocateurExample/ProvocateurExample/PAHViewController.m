@@ -11,7 +11,7 @@
 #import "PAHViewController.h"
 
 #import "Provocateur.h"
-#import "HexColor.h"
+#import "UIColor+Additions.h"
 
 @interface PAHViewController ()
 
@@ -34,7 +34,7 @@
     [[Provocateur sharedInstance] configureKey:@"color"
                                     usingBlock:^(id value) {
                                         NSString *colorValue = (NSString *)value;
-                                        self.view.backgroundColor = [UIColor colorWithHexString:colorValue];
+                                        self.view.backgroundColor = [UIColor colorWithRGBAHexString:colorValue];
                                     }];
     
     [[Provocateur sharedInstance] configureKey:@"ballCount"

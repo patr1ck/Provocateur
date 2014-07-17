@@ -8,16 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class PAHColorControlCell;
+
+@protocol PAHColorControlCellDelegate <NSObject>
+- (void)colorControlCell:(PAHColorControlCell *)cell changedColor:(UIColor *)color;
+@end
+
 @interface PAHColorControlCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UISlider *redSlider;
-@property (weak, nonatomic) IBOutlet UISlider *greenSlider;
-@property (weak, nonatomic) IBOutlet UISlider *blueSlider;
-@property (weak, nonatomic) IBOutlet UITextField *hexTextField;
-
-- (IBAction)redChanged:(id)sender;
-- (IBAction)greenChanged:(id)sender;
-- (IBAction)blueChanged:(id)sender;
-- (IBAction)hexChanged:(id)sender;
+@property (copy, nonatomic) UIColor *color;
+@property (weak, nonatomic) id<PAHColorControlCellDelegate> delegate;
 
 @end

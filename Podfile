@@ -1,1 +1,1 @@
-pod 'HexColors', '~> 2.2.1'
+pod 'UIColor+Additions', '~> 1.0.1'

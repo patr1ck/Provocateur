@@ -17,8 +17,7 @@
 		CDB93C3118B3298500354CA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C2F18B3298500354CA9 /* InfoPlist.strings */; };
 		CDB93C3318B3298500354CA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C3218B3298500354CA9 /* main.m */; };
 		CDB93C3718B3298500354CA9 /* PAHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C3618B3298500354CA9 /* PAHAppDelegate.m */; };
-		CDB93C3A18B3298500354CA9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C3818B3298500354CA9 /* Main_iPhone.storyboard */; };
-		CDB93C3D18B3298500354CA9 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C3B18B3298500354CA9 /* Main_iPad.storyboard */; };
+		CDB93C3A18B3298500354CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C3818B3298500354CA9 /* Main.storyboard */; };
 		CDB93C4018B3298500354CA9 /* PAHHeadquatersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */; };
 		CDB93C4218B3298500354CA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C4118B3298500354CA9 /* Images.xcassets */; };
 		CDB93C4918B3298500354CA9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C4818B3298500354CA9 /* XCTest.framework */; };
@@ -55,8 +54,7 @@
 		CDB93C3418B3298500354CA9 /* Headquarters-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Headquarters-Prefix.pch"; sourceTree = "<group>"; };
 		CDB93C3518B3298500354CA9 /* PAHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAHAppDelegate.h; sourceTree = "<group>"; };
 		CDB93C3618B3298500354CA9 /* PAHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAHAppDelegate.m; sourceTree = "<group>"; };
-		CDB93C3918B3298500354CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		CDB93C3C18B3298500354CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CDB93C3918B3298500354CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDB93C3E18B3298500354CA9 /* PAHHeadquatersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAHHeadquatersViewController.h; sourceTree = "<group>"; };
 		CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAHHeadquatersViewController.m; sourceTree = "<group>"; };
 		CDB93C4118B3298500354CA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -129,8 +127,7 @@
 				CDB93C3518B3298500354CA9 /* PAHAppDelegate.h */,
 				CDB93C3618B3298500354CA9 /* PAHAppDelegate.m */,
 				CD39725618B32E3300D4C1D0 /* ConnectOverlayView.xib */,
-				CDB93C3818B3298500354CA9 /* Main_iPhone.storyboard */,
-				CDB93C3B18B3298500354CA9 /* Main_iPad.storyboard */,
+				CDB93C3818B3298500354CA9 /* Main.storyboard */,
 				CDB93C3E18B3298500354CA9 /* PAHHeadquatersViewController.h */,
 				CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */,
 				CD96CE7C1947AC3A00CD2DAB /* PAHColorControlCell.h */,
@@ -217,7 +214,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PAH;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Pacific Helm";
 				TargetAttributes = {
 					CDB93C4618B3298500354CA9 = {
@@ -249,9 +246,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB93C3D18B3298500354CA9 /* Main_iPad.storyboard in Resources */,
 				CDB93C4218B3298500354CA9 /* Images.xcassets in Resources */,
-				CDB93C3A18B3298500354CA9 /* Main_iPhone.storyboard in Resources */,
+				CDB93C3A18B3298500354CA9 /* Main.storyboard in Resources */,
 				CD39725718B32E3300D4C1D0 /* ConnectOverlayView.xib in Resources */,
 				CDB93C3118B3298500354CA9 /* InfoPlist.strings in Resources */,
 			);
@@ -307,20 +303,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		CDB93C3818B3298500354CA9 /* Main_iPhone.storyboard */ = {
+		CDB93C3818B3298500354CA9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CDB93C3918B3298500354CA9 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		CDB93C3B18B3298500354CA9 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDB93C3C18B3298500354CA9 /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		CDB93C5118B3298500354CA9 /* InfoPlist.strings */ = {
@@ -338,7 +326,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -378,7 +365,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -415,7 +401,19 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Headquarters/Headquarters-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"\"${PODS_ROOT}/Headers/UIColor+Additions\"",
+					"\"${PODS_ROOT}/Headers\"",
+				);
 				INFOPLIST_FILE = "Headquarters/Headquarters-Info.plist";
+				PODS_ROOT = "${SRCROOT}/../Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,7 +426,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Headquarters/Headquarters-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"\"${PODS_ROOT}/Headers/UIColor+Additions\"",
+					"\"${PODS_ROOT}/Headers\"",
+				);
 				INFOPLIST_FILE = "Headquarters/Headquarters-Info.plist";
+				PODS_ROOT = "${SRCROOT}/../Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -437,7 +442,6 @@
 		CDB93C5C18B3298500354CA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Headquarters.app/Headquarters";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -460,7 +464,6 @@
 		CDB93C5D18B3298500354CA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Headquarters.app/Headquarters";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

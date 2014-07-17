@@ -8,11 +8,13 @@
 
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
+#import "UIColor+Additions.h"
+
 #import "PAHHeadquatersViewController.h"
 #import "PAHNumberValueCell.h"
 #import "PAHColorControlCell.h"
 
-@interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate>
+@interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PAHColorControlCellDelegate>
 
 // Multipeer
 @property (nonatomic, strong) MCPeerID *peerID;
@@ -57,9 +59,7 @@
                          animations:^{
                              [self.view addSubview:self.overlay];
                          }
-                         completion:^(BOOL finished) {
-                             
-                         }];
+                         completion:nil];
     }
 }
 
@@ -75,6 +75,80 @@
 }
 
 #pragma mark - IBActions
+
+- (IBAction)showConnectModal:(id)sender;
+{
+    [self presentViewController:self.browser animated:YES completion:^{}];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.overridablesDictionary allKeys].count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UITableViewCell *cell;
+    
+    NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:indexPath.section];
+    NSDictionary *overrideableValue = self.overridablesDictionary[key];
+    id defaultValue = overrideableValue[@"default"];
+    
+    // See what kind of cell we are;
+    if ([defaultValue isKindOfClass:[NSNumber class]]) {
+        PAHNumberValueCell *numberCell = [self.tableView dequeueReusableCellWithIdentifier:@"value" forIndexPath:indexPath];
+        
+        numberCell.tag = indexPath.section;
+//        numberCell.delegate = self;
+        
+        cell = numberCell;
+    } else if ([defaultValue isKindOfClass:[NSString class]]) {
+        PAHColorControlCell *colorCell = [self.tableView dequeueReusableCellWithIdentifier:@"color" forIndexPath:indexPath];
+        
+        colorCell.tag = indexPath.section;
+        colorCell.delegate = self;
+        
+        cell = colorCell;
+    }
+    
+    
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.overridablesDictionary.allKeys objectAtIndex:section];
+}
+
+#pragma mark PAHColorControlCellDelegate
+
+- (void)colorControlCell:(PAHColorControlCell *)cell changedColor:(UIColor *)color;
+{
+    NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:cell.tag];
+    [self sendValue:color forKey:key];
+}
+
+- (IBAction)sendValue:(id)value forKey:(NSString *)key
+{
+    NSError *error = nil;
+    NSDictionary *txDictionary = @{@"key": key, @"value": value};
+    NSData *dataPackage = [NSKeyedArchiver archivedDataWithRootObject:txDictionary];
+    
+    BOOL success = [self.peeringSession sendData:dataPackage
+                                         toPeers:self.peeringSession.connectedPeers
+                                        withMode:MCSessionSendDataReliable
+                                           error:&error];
+    
+    if (!success && error) {
+        NSLog(@"ERROR SENDING: %@", [error localizedDescription]);
+    }
+}
+
 
 - (IBAction)colorDidUpdate:(id)sender
 {
@@ -99,57 +173,6 @@
     }
 }
 
-
-- (IBAction)showConnectModal:(id)sender;
-{
-    [self presentViewController:self.browser animated:YES completion:^{}];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [self.overridablesDictionary allKeys].count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-{
-    return 1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0) {
-        return 170;
-    } else {
-        return 64;
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"blah"];
-    
-    NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:indexPath.section];
-    id value = self.overridablesDictionary[key];
-    
-    // See what kind of cell we are;
-    if ([value[@"default"] isKindOfClass:[NSNumber class]]) {
-        PAHNumberValueCell *numberCell = [self.tableView dequeueReusableCellWithIdentifier:@"value" forIndexPath:indexPath];
-        
-        cell = numberCell;
-    } else if ([value[@"default"] isKindOfClass:[NSString class]]) {
-        PAHColorControlCell *colorCell = [self.tableView dequeueReusableCellWithIdentifier:@"color" forIndexPath:indexPath];
-        
-        cell = colorCell;
-    }
-    
-    
-    return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [self.overridablesDictionary.allKeys objectAtIndex:section];
-}
 
 #pragma mark MCBrowserViewControllerDelegate
 
