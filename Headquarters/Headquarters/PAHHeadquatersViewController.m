@@ -130,7 +130,7 @@
 - (void)colorControlCell:(PAHColorControlCell *)cell changedColor:(UIColor *)color;
 {
     NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:cell.tag];
-    [self sendValue:color forKey:key];
+    [self sendValue:[color RGBHexString] forKey:key];
 }
 
 - (IBAction)sendValue:(id)value forKey:(NSString *)key

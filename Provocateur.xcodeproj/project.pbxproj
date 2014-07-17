@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		78D35CFD9B6648EC8C5DC144 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B71B97B02E21454C8EF8AC9E /* libPods.a */; };
 		CD08FB2B18B2E86200E96B6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD08FB2A18B2E86200E96B6B /* Foundation.framework */; };
-		CD08FB3018B2E86200E96B6B /* Provocateur.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD08FB2F18B2E86200E96B6B /* Provocateur.h */; };
+		CD08FB3018B2E86200E96B6B /* Provocateur.h in Copy Files */ = {isa = PBXBuildFile; fileRef = CD08FB2F18B2E86200E96B6B /* Provocateur.h */; };
 		CD08FB3218B2E86200E96B6B /* Provocateur.m in Sources */ = {isa = PBXBuildFile; fileRef = CD08FB3118B2E86200E96B6B /* Provocateur.m */; };
 		CD08FB3918B2E86200E96B6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD08FB3818B2E86200E96B6B /* XCTest.framework */; };
 		CD08FB3A18B2E86200E96B6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD08FB2A18B2E86200E96B6B /* Foundation.framework */; };
@@ -31,14 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CD08FB2518B2E86200E96B6B /* CopyFiles */ = {
+		CD08FB2518B2E86200E96B6B /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CD08FB3018B2E86200E96B6B /* Provocateur.h in CopyFiles */,
+				CD08FB3018B2E86200E96B6B /* Provocateur.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -162,7 +163,7 @@
 				05AEE4E7727C4E4E99B52635 /* Check Pods Manifest.lock */,
 				CD08FB2318B2E86200E96B6B /* Sources */,
 				CD08FB2418B2E86200E96B6B /* Frameworks */,
-				CD08FB2518B2E86200E96B6B /* CopyFiles */,
+				CD08FB2518B2E86200E96B6B /* Copy Files */,
 				561EC22D38D142CDA264BCE2 /* Copy Pods Resources */,
 			);
 			buildRules = (

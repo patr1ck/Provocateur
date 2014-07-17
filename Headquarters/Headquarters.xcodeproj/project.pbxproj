@@ -25,6 +25,8 @@
 		CDB93C4B18B3298500354CA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2A18B3298500354CA9 /* UIKit.framework */; };
 		CDB93C5318B3298500354CA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C5118B3298500354CA9 /* InfoPlist.strings */; };
 		CDB93C5518B3298500354CA9 /* HeadquartersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C5418B3298500354CA9 /* HeadquartersTests.m */; };
+		CDBA5E9E19779BD7000CA19B /* libProvocateur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBA5E9D19779BD7000CA19B /* libProvocateur.a */; };
+		CDBA5EA019779C8D000CA19B /* Pods.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		CDB93C5018B3298500354CA9 /* HeadquartersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HeadquartersTests-Info.plist"; sourceTree = "<group>"; };
 		CDB93C5218B3298500354CA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDB93C5418B3298500354CA9 /* HeadquartersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadquartersTests.m; sourceTree = "<group>"; };
+		CDBA5E9D19779BD7000CA19B /* libProvocateur.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProvocateur.a; path = "../build/Release-iphoneos/libProvocateur.a"; sourceTree = "<group>"; };
+		CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CDBA5EA119779D12000CA19B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBA5E9E19779BD7000CA19B /* libProvocateur.a in Frameworks */,
 				CD39725518B32DDB00D4C1D0 /* MultipeerConnectivity.framework in Frameworks */,
 				CDB93C2918B3298500354CA9 /* CoreGraphics.framework in Frameworks */,
 				CDB93C2B18B3298500354CA9 /* UIKit.framework in Frameworks */,
@@ -93,6 +99,7 @@
 		CDB93C1A18B3298500354CA9 = {
 			isa = PBXGroup;
 			children = (
+				CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */,
 				CDB93C2C18B3298500354CA9 /* Headquarters */,
 				CDB93C4E18B3298500354CA9 /* HeadquartersTests */,
 				CDB93C2518B3298500354CA9 /* Frameworks */,
@@ -112,6 +119,8 @@
 		CDB93C2518B3298500354CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDBA5EA119779D12000CA19B /* libPods.a */,
+				CDBA5E9D19779BD7000CA19B /* libProvocateur.a */,
 				CD39725418B32DDB00D4C1D0 /* MultipeerConnectivity.framework */,
 				CDB93C2618B3298500354CA9 /* Foundation.framework */,
 				CDB93C2818B3298500354CA9 /* CoreGraphics.framework */,
@@ -246,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBA5EA019779C8D000CA19B /* Pods.xcconfig in Resources */,
 				CDB93C4218B3298500354CA9 /* Images.xcassets in Resources */,
 				CDB93C3A18B3298500354CA9 /* Main.storyboard in Resources */,
 				CD39725718B32E3300D4C1D0 /* ConnectOverlayView.xib in Resources */,
@@ -396,6 +406,7 @@
 		};
 		CDB93C5918B3298500354CA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -413,6 +424,11 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = "Headquarters/Headquarters-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/patrick/code/Provocateur/Pods/build/Debug-iphoneos",
+					"/Users/patrick/code/Provocateur/build/Release-iphoneos",
+				);
 				PODS_ROOT = "${SRCROOT}/../Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -421,6 +437,7 @@
 		};
 		CDB93C5A18B3298500354CA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -433,6 +450,11 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = "Headquarters/Headquarters-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/patrick/code/Provocateur/Pods/build/Debug-iphoneos",
+					"/Users/patrick/code/Provocateur/build/Release-iphoneos",
+				);
 				PODS_ROOT = "${SRCROOT}/../Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

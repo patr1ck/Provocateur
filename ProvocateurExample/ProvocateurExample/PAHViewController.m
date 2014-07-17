@@ -34,7 +34,7 @@
     [[Provocateur sharedInstance] configureKey:@"color"
                                     usingBlock:^(id value) {
                                         NSString *colorValue = (NSString *)value;
-                                        self.view.backgroundColor = [UIColor colorWithRGBAHexString:colorValue];
+                                        self.view.backgroundColor = [UIColor colorWithRGBHexString:colorValue];
                                     }];
     
     [[Provocateur sharedInstance] configureKey:@"ballCount"
