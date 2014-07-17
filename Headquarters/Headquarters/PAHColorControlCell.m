@@ -82,9 +82,9 @@
 - (void)update:(id)sender
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(colorControlCell:changedColor:)]) {
-        [self.delegate colorControlCell:self changedColor:[UIColor colorWithRed:self.redSlider.value
-                                                                          green:self.greenSlider.value
-                                                                           blue:self.blueSlider.value
+        [self.delegate colorControlCell:self changedColor:[UIColor colorWithRed:(self.redSlider.value / 255.0f)
+                                                                          green:(self.greenSlider.value / 255.0f)
+                                                                           blue:(self.blueSlider.value / 255.0f)
                                                                           alpha:1.0]];
     }
 }
