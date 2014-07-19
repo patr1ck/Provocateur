@@ -126,16 +126,13 @@
                                     <outlet property="redSlider" destination="5QJ-CN-m79" id="xh9-pr-N42"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="value" rowHeight="64" id="ZAs-dS-M9l" customClass="PAHNumberValueCell">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="value" rowHeight="64" id="ZAs-dS-M9l" customClass="PAHNumberControlCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZAs-dS-M9l" id="LgG-zA-Bb7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3bz-J1-tfG">
                                             <rect key="frame" x="112" y="16" width="350" height="31"/>
-                                            <connections>
-                                                <action selector="numberChanged:" destination="ZAs-dS-M9l" eventType="valueChanged" id="GIH-2Q-2Nd"/>
-                                            </connections>
                                         </slider>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5G-lr-FYV">
                                             <rect key="frame" x="20" y="17" width="86" height="30"/>

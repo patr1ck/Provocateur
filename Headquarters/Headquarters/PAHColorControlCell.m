@@ -71,6 +71,10 @@
                           block:^(id observer, UIColor *color, NSDictionary *change) {
                               UIColor *newColor = change[NSKeyValueChangeNewKey];
                               
+                              if (!newColor) {
+                                  return;
+                              }
+                              
                               self.hexTextField.text = [newColor RGBHexString];
                               
                               const CGFloat *components = CGColorGetComponents([newColor CGColor]);

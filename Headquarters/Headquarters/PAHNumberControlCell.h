@@ -1,5 +1,5 @@
 //
-//  PAHNumberContorCell.h
+//  PAHNumberControlCell.h
 //  Headquarters
 //
 //  Created by Patrick Gibson on 6/10/14.
@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class PAHNumberContorCell;
+@class PAHNumberControlCell;
 
 @protocol PAHNumberControlCellDelegate <NSObject>
-- (void)numberControlCell:(PAHNumberContorCell *)cell changedNumber:(NSNumber *)number;
+- (void)numberControlCell:(PAHNumberControlCell *)cell changedNumber:(NSNumber *)number;
 @end
 
-@interface PAHNumberContorCell : UITableViewCell
+@interface PAHNumberControlCell : UITableViewCell
 
 @property (strong, nonatomic) NSNumber *number;
 @property (weak, nonatomic) id<PAHNumberControlCellDelegate> delegate;
+@property (readonly, nonatomic) IBOutlet UISlider *numberSlider;
 
 @end

@@ -1,26 +1,27 @@
 //
-//  PAHNumberContorCell.h
+//  PAHNumberControlCell.h
 //  Headquarters
 //
 //  Created by Patrick Gibson on 6/10/14.
 //  Copyright (c) 2014 Pacific Helm. All rights reserved.
 //
 
-#import "PAHNumberContorCell.h"
+#import "PAHNumberControlCell.h"
 
 #import <KVOController/FBKVOController.h>
 
-@interface PAHNumberContorCell () <UITextFieldDelegate>
+@interface PAHNumberControlCell () <UITextFieldDelegate>
 
 @property (strong, nonatomic) FBKVOController *kvoController;
 
-@property (weak, nonatomic) IBOutlet UISlider *numberSlider;
 @property (weak, nonatomic) IBOutlet UITextField *numberTextField;
+@property (weak, nonatomic) IBOutlet UISlider *numberSlider;
+
 
 @end
 
 
-@implementation PAHNumberContorCell
+@implementation PAHNumberControlCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -52,7 +53,7 @@
     self.numberTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     [self.kvoController observe:self
-                        keyPath:@"color"
+                        keyPath:@"number"
                         options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew
                           block:^(id observer, NSNumber *number, NSDictionary *change) {
                               NSNumber *newNumber = change[NSKeyValueChangeNewKey];

@@ -11,7 +11,7 @@
 #import "UIColor+Additions.h"
 
 #import "PAHHeadquatersViewController.h"
-#import "PAHNumberValueCell.h"
+#import "PAHNumberControlCell.h"
 #import "PAHColorControlCell.h"
 
 @interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PAHColorControlCellDelegate>
@@ -101,7 +101,7 @@
     
     // See what kind of cell we are;
     if ([defaultValue isKindOfClass:[NSNumber class]]) {
-        PAHNumberValueCell *numberCell = [self.tableView dequeueReusableCellWithIdentifier:@"value" forIndexPath:indexPath];
+        PAHNumberControlCell *numberCell = [self.tableView dequeueReusableCellWithIdentifier:@"value" forIndexPath:indexPath];
         
         numberCell.tag = indexPath.section;
 //        numberCell.delegate = self;

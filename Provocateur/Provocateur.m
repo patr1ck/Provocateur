@@ -56,7 +56,7 @@
     [self.advertiser start];
 }
 
-- (void)configureKey:(NSString *)key usingBlock:(ProvocateurBlock)block;
+- (void)configureExistingKey:(NSString *)key usingBlock:(ProvocateurBlock)block;
 {
     [self.keyToBlockMap setObject:block forKey:key];
     

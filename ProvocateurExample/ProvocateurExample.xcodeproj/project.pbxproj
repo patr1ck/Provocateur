@@ -21,8 +21,8 @@
 		CD08FB8018B3094800E96B6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD08FB6218B3094800E96B6B /* UIKit.framework */; };
 		CD08FB8818B3094800E96B6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD08FB8618B3094800E96B6B /* InfoPlist.strings */; };
 		CD08FB8A18B3094800E96B6B /* ProvocateurExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD08FB8918B3094800E96B6B /* ProvocateurExampleTests.m */; };
-		CD08FBBA18B30A1200E96B6B /* libProvocateur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD08FBB918B30A1200E96B6B /* libProvocateur.a */; };
 		CD08FBBC18B30BE000E96B6B /* Overridables.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD08FBBB18B30BE000E96B6B /* Overridables.plist */; };
+		CD7859DD197B377900395F21 /* libProvocateur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7859DC197B377900395F21 /* libProvocateur.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		CD08FB8518B3094800E96B6B /* ProvocateurExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProvocateurExampleTests-Info.plist"; sourceTree = "<group>"; };
 		CD08FB8718B3094800E96B6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD08FB8918B3094800E96B6B /* ProvocateurExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvocateurExampleTests.m; sourceTree = "<group>"; };
-		CD08FBB918B30A1200E96B6B /* libProvocateur.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProvocateur.a; path = "../build/Debug-iphoneos/libProvocateur.a"; sourceTree = "<group>"; };
 		CD08FBBB18B30BE000E96B6B /* Overridables.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Overridables.plist; sourceTree = "<group>"; };
+		CD7859DC197B377900395F21 /* libProvocateur.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProvocateur.a; path = "../build/Release-iphoneos/libProvocateur.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD08FBBA18B30A1200E96B6B /* libProvocateur.a in Frameworks */,
+				CD7859DD197B377900395F21 /* libProvocateur.a in Frameworks */,
 				CD08FB6118B3094800E96B6B /* CoreGraphics.framework in Frameworks */,
 				CD08FB6318B3094800E96B6B /* UIKit.framework in Frameworks */,
 				CD08FB5F18B3094800E96B6B /* Foundation.framework in Frameworks */,
@@ -106,7 +106,7 @@
 		CD08FB5D18B3094800E96B6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD08FBB918B30A1200E96B6B /* libProvocateur.a */,
+				CD7859DC197B377900395F21 /* libProvocateur.a */,
 				CD08FB5E18B3094800E96B6B /* Foundation.framework */,
 				CD08FB6018B3094800E96B6B /* CoreGraphics.framework */,
 				CD08FB6218B3094800E96B6B /* UIKit.framework */,
@@ -395,6 +395,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProvocateurExample/ProvocateurExample-Prefix.pch";
 				INFOPLIST_FILE = "ProvocateurExample/ProvocateurExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/patrick/code/Provocateur/build/Release-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -413,6 +417,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProvocateurExample/ProvocateurExample-Prefix.pch";
 				INFOPLIST_FILE = "ProvocateurExample/ProvocateurExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/patrick/code/Provocateur/build/Release-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

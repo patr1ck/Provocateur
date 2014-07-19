@@ -31,20 +31,20 @@
     _ballCount = 4;
     _staggerBounce = 0;
     
-    [[Provocateur sharedInstance] configureKey:@"color"
+    [[Provocateur sharedInstance] configureExistingKey:@"color"
                                     usingBlock:^(id value) {
                                         NSString *colorValue = (NSString *)value;
                                         self.view.backgroundColor = [UIColor colorWithRGBHexString:colorValue];
                                     }];
     
-    [[Provocateur sharedInstance] configureKey:@"ballCount"
+    [[Provocateur sharedInstance] configureExistingKey:@"ballCount"
                                     usingBlock:^(id value) {
                                         NSUInteger ballCount = [(NSNumber *)value unsignedIntegerValue];
                                         _ballCount = ballCount;
                                         [self restartBouncing];
                                     }];
     
-    [[Provocateur sharedInstance] configureKey:@"staggerBounce"
+    [[Provocateur sharedInstance] configureExistingKey:@"staggerBounce"
                                     usingBlock:^(id value) {
                                         CGFloat staggerBounce = [(NSNumber *)value floatValue];
                                         _staggerBounce = staggerBounce;
