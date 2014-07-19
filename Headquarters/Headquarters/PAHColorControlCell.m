@@ -11,7 +11,7 @@
 
 #import <KVOController/FBKVOController.h>
 
-@interface PAHColorControlCell ()
+@interface PAHColorControlCell () <UITextFieldDelegate>
 
 @property (strong, nonatomic) FBKVOController *kvoController;
 
@@ -62,6 +62,8 @@
     [self.blueSlider addTarget:self action:@selector(update:) forControlEvents:UIControlEventValueChanged];
     
     [self.hexTextField addTarget:self action:@selector(update:) forControlEvents:UIControlEventEditingChanged];
+    self.hexTextField.delegate = self;
+    self.hexTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     [self.kvoController observe:self
                         keyPath:@"color"
@@ -117,5 +119,10 @@
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end
