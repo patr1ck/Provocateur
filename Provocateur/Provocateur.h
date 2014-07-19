@@ -14,5 +14,6 @@ typedef void (^ProvocateurBlock)(id value);
 + (id)sharedInstance;
 
 - (void)listen;
-- (void)configureKey:(NSString *)key usingBlock:(ProvocateurBlock)block;
+- (void)configureExistingKey:(NSString *)key usingBlock:(ProvocateurBlock)block;
+- (void)configureNewKey:(NSString *)key withDefaultValue:(id)defaultValue options:(NSDictionary *)options usingBlock:(ProvocateurBlock)block;
 @end

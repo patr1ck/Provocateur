@@ -110,6 +110,7 @@
     } else if ([defaultValue isKindOfClass:[NSString class]]) {
         PAHColorControlCell *colorCell = [self.tableView dequeueReusableCellWithIdentifier:@"color" forIndexPath:indexPath];
         
+        colorCell.color = [UIColor colorWithRGBHexString:defaultValue];
         colorCell.tag = indexPath.section;
         colorCell.delegate = self;
         

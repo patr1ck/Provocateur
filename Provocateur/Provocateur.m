@@ -69,6 +69,11 @@
     
 }
 
+- (void)configureNewKey:(NSString *)key withDefaultValue:(id)defaultValue options:(NSDictionary *)options usingBlock:(ProvocateurBlock)block;
+{
+    // Create the value in our dictionary
+}
+
 #pragma mark - Private
 
 - (void)setup
