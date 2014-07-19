@@ -1,10 +1,13 @@
 PODS:
+  - KVOController (1.0.1)
   - UIColor+Additions (1.0.1)
 
 DEPENDENCIES:
+  - KVOController
   - UIColor+Additions (~> 1.0.1)
 
 SPEC CHECKSUMS:
+  KVOController: e6ad4a058ab0ceed546802361adb89d322a22cf2
   UIColor+Additions: 6c3ab749f2c0c55b3154c4fd0207de1d3505dda3
 
 COCOAPODS: 0.33.1

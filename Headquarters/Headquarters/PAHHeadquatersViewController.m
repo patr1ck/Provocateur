@@ -201,7 +201,7 @@
 // Received data from remote peer
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID;
 {
-    NSLog(@"Got data: %@", data);
+//    NSLog(@"Got data: %@", data);
 }
 
 // Received a byte stream from remote peer

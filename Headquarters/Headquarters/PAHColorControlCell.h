@@ -16,7 +16,7 @@
 
 @interface PAHColorControlCell : UITableViewCell
 
-@property (copy, nonatomic) UIColor *color;
+@property (strong, nonatomic) UIColor *color;
 @property (weak, nonatomic) id<PAHColorControlCellDelegate> delegate;
 
 @end
