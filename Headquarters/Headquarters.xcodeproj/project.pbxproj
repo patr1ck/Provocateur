@@ -26,7 +26,7 @@
 		CDB93C5318B3298500354CA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C5118B3298500354CA9 /* InfoPlist.strings */; };
 		CDB93C5518B3298500354CA9 /* HeadquartersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C5418B3298500354CA9 /* HeadquartersTests.m */; };
 		CDBA5E9E19779BD7000CA19B /* libProvocateur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBA5E9D19779BD7000CA19B /* libProvocateur.a */; };
-		CDBA5EA019779C8D000CA19B /* Pods.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */; };
+		CDC6EC6E19A41CA800CA09C6 /* Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC6EC6D19A41CA800CA09C6 /* Debug.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,7 @@
 		CDBA5E9D19779BD7000CA19B /* libProvocateur.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProvocateur.a; path = "../build/Release-iphoneos/libProvocateur.a"; sourceTree = "<group>"; };
 		CDBA5E9F19779C8D000CA19B /* Pods.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CDBA5EA119779D12000CA19B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		CDC6EC6D19A41CA800CA09C6 /* Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Debug.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +161,7 @@
 		CDB93C2D18B3298500354CA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CDC6EC6D19A41CA800CA09C6 /* Debug.plist */,
 				CDB93C2E18B3298500354CA9 /* Headquarters-Info.plist */,
 				CDB93C2F18B3298500354CA9 /* InfoPlist.strings */,
 				CDB93C3218B3298500354CA9 /* main.m */,
@@ -263,10 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDBA5EA019779C8D000CA19B /* Pods.xcconfig in Resources */,
 				CDB93C4218B3298500354CA9 /* Images.xcassets in Resources */,
 				CDB93C3A18B3298500354CA9 /* Main.storyboard in Resources */,
 				CD39725718B32E3300D4C1D0 /* ConnectOverlayView.xib in Resources */,
+				CDC6EC6E19A41CA800CA09C6 /* Debug.plist in Resources */,
 				CDB93C3118B3298500354CA9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,11 +434,6 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = "Headquarters/Headquarters-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/patrick/code/Provocateur/Pods/build/Debug-iphoneos",
-					"/Users/patrick/code/Provocateur/build/Release-iphoneos",
-				);
 				PODS_ROOT = "${SRCROOT}/../Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -458,11 +455,6 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = "Headquarters/Headquarters-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/patrick/code/Provocateur/Pods/build/Debug-iphoneos",
-					"/Users/patrick/code/Provocateur/build/Release-iphoneos",
-				);
 				PODS_ROOT = "${SRCROOT}/../Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

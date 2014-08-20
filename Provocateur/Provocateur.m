@@ -20,7 +20,7 @@
 @property (nonatomic, strong) MCAdvertiserAssistant *advertiser;
 
 // Value tracking
-@property (nonatomic, strong) NSDictionary *defaultValueDictionary;
+@property (nonatomic, strong) NSMutableDictionary *defaultValueDictionary;
 @property (nonatomic, strong) NSMapTable *keyToBlockMap;
 
 @end
@@ -72,6 +72,10 @@
 - (void)configureNewKey:(NSString *)key withDefaultValue:(id)defaultValue options:(NSDictionary *)options usingBlock:(ProvocateurBlock)block;
 {
     // Create the value in our dictionary
+    [self.keyToBlockMap setObject:block forKey:key];
+
+//    [self.defaultValueDictionary ]
+    
 }
 
 #pragma mark - Private
@@ -83,7 +87,7 @@
                                                        capacity:100];
     
     NSString *defaultsFilePath = [[NSBundle mainBundle] pathForResource:@"Overridables" ofType:@"plist"];
-	self.defaultValueDictionary = [NSDictionary dictionaryWithContentsOfFile:defaultsFilePath];
+	self.defaultValueDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:defaultsFilePath];
 }
 
 #pragma mark MCAdvertiserAssistantDelegate
@@ -134,7 +138,7 @@
 // Received data from remote peer
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID;
 {
-    NSLog(@"Got data: %@", data);
+//    NSLog(@"Got data: %@", data);
     
     NSDictionary *rxDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:data];
     

@@ -18,6 +18,6 @@
 
 @property (strong, nonatomic) NSNumber *number;
 @property (weak, nonatomic) id<PAHNumberControlCellDelegate> delegate;
-@property (readonly, nonatomic) IBOutlet UISlider *numberSlider;
+@property (readonly, weak, nonatomic) UISlider *numberSlider;
 
 @end

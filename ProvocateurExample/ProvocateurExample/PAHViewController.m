@@ -16,7 +16,6 @@
 @interface PAHViewController ()
 
 @property (nonatomic, assign) NSUInteger ballCount;
-@property (nonatomic, assign) CGFloat staggerBounce;
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 
@@ -28,26 +27,12 @@
 {
     [super viewDidLoad];
     
-    _ballCount = 4;
-    _staggerBounce = 0;
+    _ballCount = 3;
     
     [[Provocateur sharedInstance] configureExistingKey:@"color"
                                     usingBlock:^(id value) {
                                         NSString *colorValue = (NSString *)value;
                                         self.view.backgroundColor = [UIColor colorWithRGBHexString:colorValue];
-                                    }];
-    
-    [[Provocateur sharedInstance] configureExistingKey:@"ballCount"
-                                    usingBlock:^(id value) {
-                                        NSUInteger ballCount = [(NSNumber *)value unsignedIntegerValue];
-                                        _ballCount = ballCount;
-                                        [self restartBouncing];
-                                    }];
-    
-    [[Provocateur sharedInstance] configureExistingKey:@"staggerBounce"
-                                    usingBlock:^(id value) {
-                                        CGFloat staggerBounce = [(NSNumber *)value floatValue];
-                                        _staggerBounce = staggerBounce;
                                     }];
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
@@ -93,7 +78,13 @@
     [self.animator addBehavior:collisionBehavior];
     
     UIDynamicItemBehavior *elasticityBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.view.subviews];
-    elasticityBehavior.elasticity = 1.0f;
+    
+    [[Provocateur sharedInstance] configureExistingKey:@"elasticity"
+                                            usingBlock:^(id value) {
+                                                CGFloat elasticity = [(NSNumber *)value floatValue];
+                                                elasticityBehavior.elasticity = elasticity;
+                                            }];
+    
     elasticityBehavior.resistance = 0.001f;
     [self.animator addBehavior:elasticityBehavior];
     

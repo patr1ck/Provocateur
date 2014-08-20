@@ -14,7 +14,7 @@
 #import "PAHNumberControlCell.h"
 #import "PAHColorControlCell.h"
 
-@interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PAHColorControlCellDelegate>
+@interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PAHColorControlCellDelegate, PAHNumberControlCellDelegate>
 
 // Multipeer
 @property (nonatomic, strong) MCPeerID *peerID;
@@ -23,6 +23,8 @@
 
 // UI
 @property (nonatomic, strong) UIView *overlay;
+@property (nonatomic, strong) UITableViewCell *colorCellPrototype;
+@property (nonatomic, strong) UITableViewCell *numberCellPrototype;
 
 // Model
 @property (nonatomic, strong) NSDictionary *overridablesDictionary;
@@ -35,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
     self.peerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
     self.peeringSession = [[MCSession alloc] initWithPeer:self.peerID];
     self.peeringSession.delegate = self;
@@ -48,6 +50,12 @@
     self.browser.delegate = self;
     
     self.overridablesDictionary = [NSDictionary dictionary];
+    
+    if (YES) {
+        NSURL *debugURL = [[NSBundle mainBundle] URLForResource:@"Debug" withExtension:@"plist"];
+        self.overridablesDictionary = [NSDictionary dictionaryWithContentsOfURL:debugURL];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,6 +89,41 @@
     [self presentViewController:self.browser animated:YES completion:^{}];
 }
 
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:indexPath.section];
+    NSDictionary *overrideableValue = self.overridablesDictionary[key];
+    id defaultValue = overrideableValue[@"default"];
+    
+    // See what kind of cell we are;
+    if ([defaultValue isKindOfClass:[NSNumber class]]) {
+        
+        if (!self.numberCellPrototype) {
+            self.numberCellPrototype = [self.tableView dequeueReusableCellWithIdentifier:@"value"];
+        }
+        
+        [self.numberCellPrototype layoutIfNeeded];
+
+        return  self.numberCellPrototype.frame.size.height;
+        
+    } else if ([defaultValue isKindOfClass:[NSString class]]) {
+        
+        if (!self.colorCellPrototype) {
+            self.colorCellPrototype = [self.tableView dequeueReusableCellWithIdentifier:@"color"];
+        }
+        
+        [self.colorCellPrototype layoutIfNeeded];
+
+        return self.colorCellPrototype.frame.size.height;
+    }
+    
+    return 0;
+}
+
+#pragma mark - UITableViewDataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [self.overridablesDictionary allKeys].count;
@@ -104,7 +147,7 @@
         PAHNumberControlCell *numberCell = [self.tableView dequeueReusableCellWithIdentifier:@"value" forIndexPath:indexPath];
         
         numberCell.tag = indexPath.section;
-//        numberCell.delegate = self;
+        numberCell.delegate = self;
         
         cell = numberCell;
     } else if ([defaultValue isKindOfClass:[NSString class]]) {
@@ -134,6 +177,14 @@
     [self sendValue:[color RGBHexString] forKey:key];
 }
 
+#pragma mark - PAHNumberControlCellDelegate
+
+- (IBAction)numberControlCell:(PAHNumberControlCell *)cell changedNumber:(NSNumber *)number
+{
+    NSString *key = [self.overridablesDictionary.allKeys objectAtIndex:cell.tag];
+    [self sendValue:number forKey:key];
+}
+
 - (IBAction)sendValue:(id)value forKey:(NSString *)key
 {
     NSError *error = nil;
@@ -149,7 +200,6 @@
         NSLog(@"ERROR SENDING: %@", [error localizedDescription]);
     }
 }
-
 
 - (IBAction)colorDidUpdate:(id)sender
 {
