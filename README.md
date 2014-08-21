@@ -13,6 +13,11 @@ An example iOS app which demos the above.
 ### Headquaters
 An iOS app that can connect to apps that use the Provocateur library and change their variables on the fly.
 
+## Setup
+
+1. Ensure Cocoapods is installed
+1. Run `pod install`
+1. Build and run the app through the .xcworkspace
 
 ## Contributing
 
