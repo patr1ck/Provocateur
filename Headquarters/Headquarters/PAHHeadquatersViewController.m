@@ -56,6 +56,9 @@
         self.overridablesDictionary = [NSDictionary dictionaryWithContentsOfURL:debugURL];
         [self.tableView reloadData];
     }
+    
+    self.tableView.estimatedRowHeight = 44.0f;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -106,7 +109,7 @@
         
         [self.numberCellPrototype layoutIfNeeded];
 
-        return  self.numberCellPrototype.frame.size.height;
+        return  [self.numberCellPrototype.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
         
     } else if ([defaultValue isKindOfClass:[NSString class]]) {
         
@@ -116,7 +119,7 @@
         
         [self.colorCellPrototype layoutIfNeeded];
 
-        return self.colorCellPrototype.frame.size.height;
+        return [self.colorCellPrototype.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
     }
     
     return 0;
