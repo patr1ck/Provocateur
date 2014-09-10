@@ -48,7 +48,7 @@
     self.numberSlider.maximumValue = 255;
     [self.numberSlider addTarget:self action:@selector(update:) forControlEvents:UIControlEventValueChanged];
     
-    [self.numberTextField addTarget:self action:@selector(update:) forControlEvents:UIControlEventEditingChanged];
+    [self.numberTextField addTarget:self action:@selector(update:) forControlEvents:UIControlEventEditingDidEnd];
     self.numberTextField.delegate = self;
     self.numberTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     
@@ -76,6 +76,7 @@
 - (void)update:(id)sender
 {
     NSNumber *newNumber = nil;
+    
     if (sender != self.numberTextField) {
         newNumber = @(self.numberSlider.value);
     } else {
