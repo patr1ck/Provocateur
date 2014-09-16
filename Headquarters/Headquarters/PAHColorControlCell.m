@@ -44,6 +44,8 @@
 
 - (void)setup
 {
+//    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     self.kvoController = [FBKVOController controllerWithObserver:self];

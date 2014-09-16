@@ -72,6 +72,8 @@
                          }
                          completion:nil];
     }
+    
+    [super viewWillAppear:animated];
 }
 
 - (UIView *)overlay

@@ -38,7 +38,7 @@
 }
 
 - (void)setup
-{
+{    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     self.kvoController = [FBKVOController controllerWithObserver:self];

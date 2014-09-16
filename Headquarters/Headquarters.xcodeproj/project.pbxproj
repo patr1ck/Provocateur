@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD39725518B32DDB00D4C1D0 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD39725418B32DDB00D4C1D0 /* MultipeerConnectivity.framework */; };
 		CD39725718B32E3300D4C1D0 /* ConnectOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD39725618B32E3300D4C1D0 /* ConnectOverlayView.xib */; };
+		CD55CDDB19C771FB007C4FFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD55CDDA19C771FB007C4FFC /* Images.xcassets */; };
 		CD96CE7E1947AC3A00CD2DAB /* PAHColorControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD96CE7D1947AC3A00CD2DAB /* PAHColorControlCell.m */; };
 		CD96CE811947AC4A00CD2DAB /* PAHNumberControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD96CE801947AC4A00CD2DAB /* PAHNumberControlCell.m */; };
 		CDB93C2718B3298500354CA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2618B3298500354CA9 /* Foundation.framework */; };
@@ -19,7 +20,6 @@
 		CDB93C3718B3298500354CA9 /* PAHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C3618B3298500354CA9 /* PAHAppDelegate.m */; };
 		CDB93C3A18B3298500354CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C3818B3298500354CA9 /* Main.storyboard */; };
 		CDB93C4018B3298500354CA9 /* PAHHeadquatersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */; };
-		CDB93C4218B3298500354CA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB93C4118B3298500354CA9 /* Images.xcassets */; };
 		CDB93C4918B3298500354CA9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C4818B3298500354CA9 /* XCTest.framework */; };
 		CDB93C4A18B3298500354CA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2618B3298500354CA9 /* Foundation.framework */; };
 		CDB93C4B18B3298500354CA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB93C2A18B3298500354CA9 /* UIKit.framework */; };
@@ -42,6 +42,7 @@
 /* Begin PBXFileReference section */
 		CD39725418B32DDB00D4C1D0 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		CD39725618B32E3300D4C1D0 /* ConnectOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectOverlayView.xib; sourceTree = "<group>"; };
+		CD55CDDA19C771FB007C4FFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CD96CE7C1947AC3A00CD2DAB /* PAHColorControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAHColorControlCell.h; sourceTree = "<group>"; };
 		CD96CE7D1947AC3A00CD2DAB /* PAHColorControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAHColorControlCell.m; sourceTree = "<group>"; };
 		CD96CE7F1947AC4A00CD2DAB /* PAHNumberControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAHNumberControlCell.h; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		CDB93C3918B3298500354CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDB93C3E18B3298500354CA9 /* PAHHeadquatersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAHHeadquatersViewController.h; sourceTree = "<group>"; };
 		CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAHHeadquatersViewController.m; sourceTree = "<group>"; };
-		CDB93C4118B3298500354CA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CDB93C4718B3298500354CA9 /* HeadquartersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadquartersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB93C4818B3298500354CA9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CDB93C5018B3298500354CA9 /* HeadquartersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HeadquartersTests-Info.plist"; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 				CDB93C3E18B3298500354CA9 /* PAHHeadquatersViewController.h */,
 				CDB93C3F18B3298500354CA9 /* PAHHeadquatersViewController.m */,
 				CD6E506F197B06D600422B16 /* Cells */,
-				CDB93C4118B3298500354CA9 /* Images.xcassets */,
 				CDB93C2D18B3298500354CA9 /* Supporting Files */,
 			);
 			path = Headquarters;
@@ -161,6 +160,7 @@
 		CDB93C2D18B3298500354CA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD55CDDA19C771FB007C4FFC /* Images.xcassets */,
 				CDC6EC6D19A41CA800CA09C6 /* Debug.plist */,
 				CDB93C2E18B3298500354CA9 /* Headquarters-Info.plist */,
 				CDB93C2F18B3298500354CA9 /* InfoPlist.strings */,
@@ -265,8 +265,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB93C4218B3298500354CA9 /* Images.xcassets in Resources */,
 				CDB93C3A18B3298500354CA9 /* Main.storyboard in Resources */,
+				CD55CDDB19C771FB007C4FFC /* Images.xcassets in Resources */,
 				CD39725718B32E3300D4C1D0 /* ConnectOverlayView.xib in Resources */,
 				CDC6EC6E19A41CA800CA09C6 /* Debug.plist in Resources */,
 				CDB93C3118B3298500354CA9 /* InfoPlist.strings in Resources */,
