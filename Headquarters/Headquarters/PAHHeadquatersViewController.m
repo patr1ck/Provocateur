@@ -14,7 +14,7 @@
 #import "PAHNumberControlCell.h"
 #import "PAHColorControlCell.h"
 
-@interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PAHColorControlCellDelegate, PAHNumberControlCellDelegate>
+@interface PAHHeadquatersViewController () <MCSessionDelegate, MCBrowserViewControllerDelegate, PAHColorControlCellDelegate, PAHNumberControlCellDelegate, UITextFieldDelegate>
 
 // Multipeer
 @property (nonatomic, strong) MCPeerID *peerID;
@@ -25,6 +25,8 @@
 @property (nonatomic, strong) UIView *overlay;
 @property (nonatomic, strong) UITableViewCell *colorCellPrototype;
 @property (nonatomic, strong) UITableViewCell *numberCellPrototype;
+@property (nonatomic, weak) UITextField *activeField;
+@property (nonatomic, assign) UIEdgeInsets tableViewInsets;
 
 // Model
 @property (nonatomic, strong) NSDictionary *overridablesDictionary;
@@ -59,10 +61,13 @@
     
     self.tableView.estimatedRowHeight = 44.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     if (self.overridablesDictionary.count == 0) {
         [UIView animateWithDuration:0.5
                               delay:0
@@ -174,7 +179,7 @@
     return [self.overridablesDictionary.allKeys objectAtIndex:section];
 }
 
-#pragma mark PAHColorControlCellDelegate
+#pragma mark - PAHColorControlCellDelegate
 
 - (void)colorControlCell:(PAHColorControlCell *)cell changedColor:(UIColor *)color;
 {

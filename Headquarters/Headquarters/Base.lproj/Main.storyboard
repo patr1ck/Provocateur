@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p3L-h6-9XK">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -25,8 +26,8 @@
                                             <color key="maximumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="thumbTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </slider>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1E1-As-LFv">
-                                            <rect key="frame" x="21" y="22" width="10" height="20"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1E1-As-LFv">
+                                            <rect key="frame" x="21" y="22" width="10" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -37,8 +38,8 @@
                                             <color key="maximumTrackTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="thumbTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </slider>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNS-JR-JZJ">
-                                            <rect key="frame" x="21" y="58" width="10" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNS-JR-JZJ">
+                                            <rect key="frame" x="21" y="59" width="10" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -49,20 +50,20 @@
                                             <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="thumbTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </slider>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-cY-U0o">
-                                            <rect key="frame" x="21" y="96" width="10" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNu-cY-U0o">
+                                            <rect key="frame" x="21" y="97" width="10" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="253" verticalCompressionResistancePriority="753" text="Hex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXy-B1-4Ug">
-                                            <rect key="frame" x="21" y="133" width="31" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" text="Hex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXy-B1-4Ug">
+                                            <rect key="frame" x="21" y="134" width="31" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ff00bb" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-A8-CYt">
-                                            <rect key="frame" x="526" y="133" width="54" height="21"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ff00bb" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-A8-CYt">
+                                            <rect key="frame" x="526" y="134" width="54" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -108,24 +109,24 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZAs-dS-M9l" id="LgG-zA-Bb7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0" clearsOnBeginEditing="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="a5G-lr-FYV" userLabel="Number Label">
+                                            <rect key="frame" x="20" y="20" width="28" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        </textField>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3bz-J1-tfG">
                                             <rect key="frame" x="113" y="20" width="469" height="31"/>
                                         </slider>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5G-lr-FYV">
-                                            <rect key="frame" x="20" y="20" width="28" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="a5G-lr-FYV" secondAttribute="bottom" constant="5.5" id="3fg-Qm-m5M"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3bz-J1-tfG" secondAttribute="trailing" constant="12" id="And-qh-GFc"/>
-                                        <constraint firstItem="a5G-lr-FYV" firstAttribute="leading" secondItem="LgG-zA-Bb7" secondAttribute="leading" constant="20" id="C6l-P4-QBZ"/>
-                                        <constraint firstItem="3bz-J1-tfG" firstAttribute="leading" secondItem="LgG-zA-Bb7" secondAttribute="leadingMargin" constant="107" id="L02-pe-dhN"/>
-                                        <constraint firstItem="3bz-J1-tfG" firstAttribute="centerY" secondItem="a5G-lr-FYV" secondAttribute="centerY" id="WnO-wS-kL6"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="3bz-J1-tfG" secondAttribute="bottom" constant="5.5" id="hWb-np-5dU"/>
-                                        <constraint firstItem="a5G-lr-FYV" firstAttribute="top" secondItem="LgG-zA-Bb7" secondAttribute="topMargin" constant="12" id="l6l-DF-IQN"/>
-                                        <constraint firstItem="3bz-J1-tfG" firstAttribute="top" secondItem="LgG-zA-Bb7" secondAttribute="topMargin" constant="12" id="ylH-Wo-aUg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="a5G-lr-FYV" secondAttribute="bottom" constant="5.5" id="Jbg-d6-1FS"/>
+                                        <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="a5G-lr-FYV" secondAttribute="trailing" constant="544" id="Nb7-Cf-SM6"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3bz-J1-tfG" secondAttribute="bottom" constant="5.5" id="QDg-5z-7HQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3bz-J1-tfG" secondAttribute="trailing" constant="12" id="VRJ-3D-rg6"/>
+                                        <constraint firstItem="a5G-lr-FYV" firstAttribute="leading" secondItem="LgG-zA-Bb7" secondAttribute="leadingMargin" constant="12" id="XqK-ef-4gU"/>
+                                        <constraint firstItem="a5G-lr-FYV" firstAttribute="top" secondItem="LgG-zA-Bb7" secondAttribute="topMargin" constant="12" id="ffq-X2-goK"/>
+                                        <constraint firstItem="3bz-J1-tfG" firstAttribute="leading" secondItem="LgG-zA-Bb7" secondAttribute="leadingMargin" constant="107" id="l5x-3m-nAU"/>
+                                        <constraint firstItem="3bz-J1-tfG" firstAttribute="top" secondItem="LgG-zA-Bb7" secondAttribute="topMargin" constant="12" id="w6d-GJ-qXp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -134,9 +135,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <variation key="widthClass=compact" ambiguous="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        </variation>
                         <connections>
                             <outlet property="dataSource" destination="Lnt-cd-dl4" id="JTr-MP-mH4"/>
                             <outlet property="delegate" destination="Lnt-cd-dl4" id="Iy1-yD-635"/>
@@ -146,7 +144,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgM-ey-6C9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183.5" y="172.5"/>
+            <point key="canvasLocation" x="1260" y="189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nxz-h8-okn">
