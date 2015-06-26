@@ -15,7 +15,7 @@ An iOS app that can connect to apps that use the Provocateur library and change 
 
 ## Setup
 
-1. Ensure Cocoapods is installed
+1. Ensure CocoaPods is installed
 1. Run `pod install`
 1. Build and run the app through the .xcworkspace
 
